@@ -18,5 +18,8 @@
 - What does the LAU look like?
   - Does LAU changes the way to allocate resources as well?
     - e.g. Fair resource allocation to prioritized resource allocation etc.
+
+- Do repeaters know the requirements for the application?
+  - If yes, it might be possible to optimize link allocation policy
 ## Connection Teardown
 - Do repeaters have to wait for RuleSet termination from both sides?
