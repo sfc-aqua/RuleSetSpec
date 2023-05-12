@@ -1,4 +1,7 @@
 # Discussions
+
+## Terminologies
+- "Initiator" or "the initiator" or ...? (same as responder)
 ## Connection Setup
 - When we think of connection setup rejection, should this be handled in the routing process? Especially, the router and repeater assumed to have sufficient number of resource. 
   - If there is a system error during the process, connection setup rejection could be useful
