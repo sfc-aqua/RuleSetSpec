@@ -21,5 +21,12 @@
 
 - Do repeaters know the requirements for the application?
   - If yes, it might be possible to optimize link allocation policy
+
+- Does repeater have to provide estimated fidelity after the purification?
 ## Connection Teardown
 - Do repeaters have to wait for RuleSet termination from both sides?
+
+
+
+### Things have to decide
+The first RuleSet to be allocated the resource
