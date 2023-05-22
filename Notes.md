@@ -76,3 +76,83 @@ sequenceDiagram
 ```
 
 port 52244
+
+LAU exchange list of connections and how to solve conflict of execution order
+
+
+### 4.3 Connection Setup over multiple networks
+> RuleSet rewriting
+> Need to introduce recursive network architecture
+
+If the initiator and the responder in the different networks, the RuleSets are also neccesary to be rewritten by intermediate routers.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    box Coral Network A
+    participant ini as Initiator
+    participant repa as Repeater A
+    participant routa as Router A
+    end
+
+    box Orange Network B
+    Participant routb as Router B
+    Participant repb as Repeater B
+    participant res as Responder
+    end
+
+    alt Local CSR
+        ini ->> repa: CSR Local
+        Note over repa: Stack local info
+        repa ->> routa: CSR Local
+    end
+    Note over routa: Store local info
+
+    routa ->> routb: CSR
+    Note over routb: Stack local info
+    routb ->> repb: CSR
+    Note over repb: Stack local info
+    repb ->> res: CSR
+
+    Note over res: Create RuleSets
+
+    res ->> res: Ack/RuleSet
+
+    res ->> repb: Ack/RuleSet
+    Note over repb, res: LAU
+    Note over repb, res: RuleSet Execution Start
+
+    res ->> routb: Ack/RuleSet
+    Note over routb, repb: LAU
+    Note over routb, repb: RuleSet Execution Start
+
+    res ->> routa: Ack/RuleSet
+
+    Note over routa: Rewrite RuleSet with local info
+    routa ->> routa: Ack/RuleSet
+    Note over routa, routb: LAU
+    Note over routa, routb: RuleSet Execution Start
+
+    routa ->> repa: Ack/RuleSet
+    Note over routa, repa: LAU
+    Note over routa, repa: RuleSet Execution Start
+
+    routa ->> ini: Ack/RuleSet
+    Note over ini, repa: LAU
+    Note over ini, repa: RuleSet Execution Start
+```
+
+## List of Contents
+### Abstract
+- [x] Introduce what is Connection Setup
+- [x] Explain why we need it
+- [ ] Mention RuleSet
+- [ ] Explain how do we implement it
+
+
+### Introduction
+- [ ] Introduce quantum communication
+- [ ] Introduce what is Connection Setup in detail
+- [ ] Explain what is the difference between classical scheme
+- [ ] Enumerate key concepts introduced in this document
+- [ ] Note for multipartite connection setup
