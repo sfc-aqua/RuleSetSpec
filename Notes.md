@@ -151,8 +151,8 @@ sequenceDiagram
 
 
 ### Introduction
-- [ ] Introduce quantum communication
-- [ ] Introduce what is Connection Setup in detail
-- [ ] Explain what is the difference between classical scheme
-- [ ] Enumerate key concepts introduced in this document
-- [ ] Note for multipartite connection setup
+- [x] Introduce quantum communication
+- [x] Introduce what is Connection Setup in detail
+- [x] Explain what is the difference between classical scheme
+- [x] Enumerate key concepts introduced in this document
+- [x] Note for multipartite connection setup
