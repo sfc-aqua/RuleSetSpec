@@ -6,6 +6,7 @@
 - When we think of connection setup rejection, should this be handled in the routing process? Especially, the router and repeater assumed to have sufficient number of resource. 
   - If there is a system error during the process, connection setup rejection could be useful
   - When there are multiple bottleneck, it could be a problem
+  - What's the rejection policy?
 
 - What information the connection setup reject contains?
   - Estimated next availble time?
